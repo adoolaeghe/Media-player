@@ -1,0 +1,129 @@
+body {
+  border: none
+}
+
+.play {
+  top: 70px;
+  left: 70px;
+  border-radius: 200px;
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  margin: 0px;
+  padding: 0px;
+  background-color: White;
+   border: none;
+   outline: none;
+}
+
+.line1, .line2 {
+  top: 0px;
+  left: 80px;
+  position: absolute;
+  border-left: thin solid #D9D9D9;
+  height: 20px;
+}
+
+.line2 {
+  top:140px;
+}
+
+
+
+#play, #pause {
+  top: 120px;
+  left: 120px;
+  border-radius: 200px;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+  border: solid 1px #D9D9D9;
+  outline: none;
+}
+
+.dot {
+  left: 140px;
+  top: 50px;
+  border-radius: 100px;
+  background-color: white;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  border: solid 3px red;
+}
+
+#pause {
+  left: 150px;
+}
+
+div.overlay {
+  background-image: url();
+  height: 160px;
+  width: 160px;
+  border-radius: 200px;
+  top: 70px;
+  left: 70px;
+  opacity: 0.5
+}
+
+.container {
+  margin-top: 15%;
+  margin-left: 40%;
+  margin-right: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+audio {
+  border-radius: 100px;
+  height: 100px;
+}
+
+.wrapper {
+
+  margin: 10px;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.wrapper1 {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  animation: 4s rotate360 infinite linear;
+}
+
+.wrapper2 {
+  animation: 4s rotate360 infinite linear;
+}
+
+.pie svg {
+  top: 50px;
+  left: 50px;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+.graph { visibility: hidden;
+  opacity: 0.5; }
+
+.graph > * {
+  visibility: visible;
+  transition: all 200ms ease-in-out;
+}
+
+
+
+.graph__percent:hover {
+  opacity: 1;
+}
+
+@keyframes rotate360 {
+  to { transform: rotate(360deg); }
+}
