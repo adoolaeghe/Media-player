@@ -1,36 +1,113 @@
 body {
-  border: none
+  border: none;
+  font-family: 'Roboto', sans-serif;
 }
 
-.play {
-  top: 70px;
-  left: 70px;
-  border-radius: 200px;
+.contain {
+  top: 0px;
+  left: 0px;
   position: absolute;
   height: 160px;
   width: 160px;
   margin: 0px;
   padding: 0px;
-  background-color: White;
-   border: none;
-   outline: none;
+  border-radius: 200px;
+  overflow: hidden;
 }
 
-.line1, .line2 {
-  top: 0px;
-  left: 80px;
+.wrapper1 {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.wrapper2 {
+  top: -77px;
+  left: -73px;
   position: absolute;
-  border-left: thin solid #D9D9D9;
-  height: 20px;
+  width: 300px;
+  height: 300px;
+  clip-path: circle(12.1% at 50% 51%);
 }
 
-.line2 {
-  top:140px;
+.play {
+  top: 70px;
+  left: 70px;
+  border: solid 4px;
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  margin: 0px;
+  padding: 0px;
+  background-image: url('cover.jpg');
+  border-radius: 200px;
+  background-repeat:no-repeat;
+  background-size:contain;
+  outline: none;
+  opacity: 0.97;
+}
+
+.line1 {
+  top: 31px;
+  left: 149px;
+  position: absolute;
+  background: linear-gradient(#FF0000,white);
+  width: 2px;
+  height: 40px;
+  opacity: 0.6;
+}
+
+p {
+  top: 15px;
+  left: 155px;
+  position: absolute;
+}
+p.buy {
+  color: white;
+  position: absolute;
+  top: 70px;
+  left: 135px;
+}
+#buy {
+  top : 72px;
+  left: 84px;
+  display: none;
+  position: absolute;
+  border-top: 70px solid #EBEBEB;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+  border-bottom: 70px solid transparent;
+  border-radius: 800px;
+  background: transparent;
+}
+
+#artistName {
+  top : 72px;
+  left: 84px;
+  display: block;
+  position: absolute;
+  height: 158px;
+  width: 158px;
+  top: 71px;
+  left: 71px;
+  border-radius: 800px;
+  background: transparent;
 }
 
 
+#circle {
+  position: absolute;
+  background: transparent;
+  height: 158px;
+  width: 158px;
+  top: 71px;
+  left: 71px;
+  border-radius: 800px;
+  border: solid 5px white;
+  outline: none;
+}
 
-#play, #pause {
+#play, #stop {
   top: 120px;
   left: 120px;
   border-radius: 200px;
@@ -39,10 +116,18 @@ body {
   width: 60px;
   margin: 0px;
   padding: 0px;
-  background-color: white;
+  background: transparent;
   border: solid 1px #D9D9D9;
   outline: none;
+  mask-image: url(cover.png),
 }
+#stop{
+  display: none;
+  background-color: white;
+  opacity: 0.9
+  ;
+}
+
 
 .dot {
   left: 140px;
@@ -53,10 +138,6 @@ body {
   width: 14px;
   position: absolute;
   border: solid 3px red;
-}
-
-#pause {
-  left: 150px;
 }
 
 div.overlay {
@@ -83,7 +164,6 @@ audio {
 }
 
 .wrapper {
-
   margin: 10px;
   position: relative;
   width: 300px;
@@ -95,11 +175,6 @@ audio {
   position: relative;
   width: 300px;
   height: 300px;
-  animation: 4s rotate360 infinite linear;
-}
-
-.wrapper2 {
-  animation: 4s rotate360 infinite linear;
 }
 
 .pie svg {
@@ -118,10 +193,8 @@ audio {
   transition: all 200ms ease-in-out;
 }
 
-
-
 .graph__percent:hover {
-  opacity: 1;
+  opacity: 0.7;
 }
 
 @keyframes rotate360 {

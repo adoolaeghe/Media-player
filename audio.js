@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'http://www.soundjay.com/misc/sounds/bell-ringing-01.mp3');
-
+    audioElement.setAttribute('src', 'public/vanishing.mp3');
     audioElement.addEventListener('ended', function() {
         this.play();
     }, false);
@@ -15,21 +14,24 @@ $(document).ready(function() {
     audioElement.addEventListener("timeupdate",function(){
         $("#currentTime").text("Current second:" + audioElement.currentTime);
     });
-
     $('#play').click(function() {
         audioElement.play();
-        $("#status").text("Status: Playing");
-        console.log($(".graph").css("opacity"))
-        $(".graph").css("opacity", "1.0");
+        $("#buy").delay(200).queue(function(n) {
+          $(this).fadeIn(100);;
+          $(this).dequeue();
+        });
+        $(".wrapper1").css("animation", 50 + "s rotate360 infinite linear");
+        $(".wrapper2").css("animation", 50 + "s rotate360 infinite linear");
+        $(".graph").animate({opacity: "1.0"});
+        $("#play").animate({height: "160px", width: "160px", top: "70px", left: "70px"}, "fast" );
+        $("#stop").css("display", "block");
     });
 
-    $('#pause').click(function() {
+    $('#stop').click(function() {
         audioElement.pause();
-        $("#status").text("Status: Paused");
-        $(".graph").css("opacity", "0.5");
-    });
-
-    $('#restart').click(function() {
-        audioElement.currentTime = 0;
+        $("#play").animate({height: "60px", width: "60px", top: "120px", left: "120px"}, "fast");
+        $("#play").css("border","solid 1px grey");
+        $("#stop").css("display", "none");
+        $("#buy").css("display", "none");
     });
 });

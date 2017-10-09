@@ -57,7 +57,7 @@
 
 console.log(array);
 function addToChart() {
-  array.push("#fe" + (Math.floor((Math.random() * 4000) + 1)+3000).toString() + " 1");
+  array.push("#f" + (Math.floor((Math.random() * 10000) + 1)+70000).toString() + " 1");
   for (i = 0; i < pies.length; i++) { new Pie(pies[i]); }
   console.log(array);
 }

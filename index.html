@@ -2,6 +2,7 @@
   <head>
   </head>
   <link rel="stylesheet" href="public/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script type="text/javascript" src="js/jquery.jplayer.js"></script>
   <script type="text/javascript" src="js/audio.js"></script>
@@ -10,18 +11,25 @@
       <div class='wrapper'>
         <div class='wrapper1'>
           <div class="pie" data-pies="#fe9984 1, #fe455f 1, #f96b07 1, #f92307 1"></div>
-          <div class='dot'></div>
         </div>
         <div class="jp-controls">
-          <button class="play" role="button" onclick="addToChart()" tabindex="0">
+          <button class="play">
+            <div class='wrapper2'>
+              <div class="pie" data-pies="#fe9984 1, #fe455f 1, #f96b07 1, #f92307 1"></div>
+            </div>
+            <button id="ArtistName"></button>
+            <button id='circle'></button>
+            <button id='play'>play</button>
+            <button id='stop'>stop</button>
+            <p class='buy' onclick="addToChart()">Buy</p>
             <div class='line1'></div>
-            <div class='line2'></div>
-            <button id='play'></div>
+            <p> username </p>
           </button>
         </div>
         </div>
       </div>
     </div>
+
   </body>
   <script type="text/javascript" src="audio.js"></script>
   <script type="text/javascript" src='script.js'></script>
