@@ -1,5 +1,5 @@
 
-  var array = ["#fe9984 1", "#fe455f 1", "#f96b07 1"];
+  var array = ["#c9538d 1", "#50b9d7 1", "#09254c 1"];
 
   var template = {
     open: '<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><circle id="graph" r="15.9154943092" cx="16" cy="16" transform="rotate(-90 16 16)" /><mask id="clip"><use xlink:href="#graph" fill="#FFF" /></mask></defs><g class="graph" mask="url(#clip)" stroke-width="32">',

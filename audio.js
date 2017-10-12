@@ -1,4 +1,10 @@
 $(document).ready(function() {
+  $(".wrapper1").css("animation", 30 + "s rotate360 infinite linear");
+  var names = ["bob","john","alice"];
+  var x = 0;
+  var y = 3;
+  var time = (30000)/y;
+
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'public/vanishing.mp3');
     audioElement.addEventListener('ended', function() {
@@ -14,24 +20,21 @@ $(document).ready(function() {
     audioElement.addEventListener("timeupdate",function(){
         $("#currentTime").text("Current second:" + audioElement.currentTime);
     });
+
     $('#play').click(function() {
         audioElement.play();
-        $("#buy").delay(200).queue(function(n) {
-          $(this).fadeIn(100);;
-          $(this).dequeue();
-        });
-        $(".wrapper1").css("animation", 50 + "s rotate360 infinite linear");
-        $(".wrapper2").css("animation", 50 + "s rotate360 infinite linear");
+        $(".wrapper1").css("animation", 30 + "s rotate360 infinite linear");
+        if($(".svg").attr("src") == "public/pause.svg"){
+          $(".graph").animate({opacity: "0.5"});
+          $(".svg").attr("src","public/play.svg");
+      } else {
         $(".graph").animate({opacity: "1.0"});
-        $("#play").animate({height: "160px", width: "160px", top: "70px", left: "70px"}, "fast" );
+        $(".svg").attr("src","public/pause.svg");
+      }
         $("#stop").css("display", "block");
     });
-
-    $('#stop').click(function() {
-        audioElement.pause();
-        $("#play").animate({height: "60px", width: "60px", top: "120px", left: "120px"}, "fast");
-        $("#play").css("border","solid 1px grey");
-        $("#stop").css("display", "none");
-        $("#buy").css("display", "none");
+    $('.addCircle').click(function(){
+      y += 1;
+      time = (30000)/y;
     });
 });
